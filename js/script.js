@@ -1,18 +1,59 @@
 
 
-const card_array = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]; /*elements in array represent the symbols in the cards*/
-const card_shuffled= []; /*empty array for storing memory values*/
-const card_tiles =[]; /*empty array for storing tile ids*/
-const card_flip = 0; /*used to keep track of cards flipped*/
+ /*elements in array represent the symbols in the cards
+let card_shuffled= []; /*empty array for storing memory values
+let card_tiles =[]; /*empty array for storing tile ids
+let card_flip = 0; /*used to keep track of cards flipped*/
 
 
-/*create function that shuffles the deck*/
+$(document).ready(function(){
+	var game = { /*creating object game, the functions are methods of this object*/
+	cards: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8], /*creating array of card values*/
+
+	/*initial function will call the shuffle function the cards*/
+	init: function(){ 
+		game.shuffle()
+	},
+	/*function that randomly shuffles the cards and assigns them to the div*/
+	shuffle: function(){
+		var j, x, i;
+    	for (i = game.cards.length - 1; i > 0; i--) {
+        	j = Math.floor(Math.random() *(i + 1));
+       		x = cards[i];
+       		cards[i] = cards[j];
+       		cards[j] = x;
+    	}
+    	game.assignCards();
+		console.log('Shuffled Card Array: '+game.cards);		
+
+	},
+
+	/*for(var i=0; i<17; i++){
+
+		$('#card'+i).text('yeah'+i);
+	}*/
+	
+	}
+});
 
 
-/*Fisher-Yates shuffle method*/
+
+
+
+/*create function that shuffles the deck when window is loaded
+$(document).ready(function(){
+	var app = { }
+	let card_array = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+
+    $("button").click(function(){
+        $("p").slideToggle();
+    });
+});
+
+
 function shuffle(a) {
     var j, x, i;
-    for (const i = a.length - 1; i > 0; i--) {
+    for (let i = a.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
         x = a[i];
         a[i] = a[j];
@@ -54,10 +95,10 @@ clickHandler.function(){
 
 }
 
-/*command shuffles cards then puts numbers on divs*/
+/*command shuffles cards then puts numbers on divs
 console.log(card_array);
 shuffle(card_array);
 /*newBoard(card_array);
 
-/*add event listerners*/
+add event listerners*/
 
