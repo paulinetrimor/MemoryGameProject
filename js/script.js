@@ -23,14 +23,27 @@ $(document).ready(function(){
 			console.log('Shuffled Card Array: '+ cards);		
 	}
 
-	function assign(){
+	function assign(){ //assigns new values of array into divs
 		for (i=0; i<cards.length; i++) {
-			$('#card'+(1+i)).text(cards[i]); //assigns the value to correct div
+			$('#card'+(1+i)).text(cards[i]); 
 		};
 
 	}
+
+	//problem with the script not running this
+	/*function myFlip(){ //determines if value is equal to the other card
+			var x = id.innerHTML;
+			console.log(x);
+	}*/
+
+	function myFlip(){ //determines if values in cards are equal
+		console.log('it works');
+	};
 	
 	init();
+
+	var el = document.getElementById('card1').textContent;
+	el.addEventListerner('click', myFlip);
 	
 	
 });
