@@ -30,20 +30,42 @@ $(document).ready(function(){
 
 	}
 
-	//problem with the script not running this
-	/*function myFlip(){ //determines if value is equal to the other card
-			var x = id.innerHTML;
-			console.log(x);
-	}*/
+	function clickHandlers(a){ //determines if values in cards are equal
+		count++;
+		click=a.currentTarget.innerHTML;  //gets the value of the current element that was clicked
+		clicks =[];
 
-	function myFlip(){ //determines if values in cards are equal
-		console.log('it works');
-	};
+		if (count%2 == 0){ //if count is even then compare
+			clicks[1] = click;
+
+			if(clicks[0]== clicks[1]){
+				//keep div face up
+				console.log('firstClick: '+ clicks[0]+ 'secondClick:' + clicks[1]+ ' does match');
+			}
+			else{
+				//flip both cards face down
+				console.log('firstClick: '+ clicks[0]+ 'secondClick:' + clicks[1]+ ' does not match');
+			}
+
+		}
+
+		else{ //count is odd
+			clicks[0]=click; //this firstclick is not being stored in the array so I cannot access its value inside the other if else statement
+			console.log('firstClick: '+ clicks[0]);
+			//also keep div face up
+		} 
+	}
 	
 	init();
+	
+	var count=0;
+	var className = document.getElementsByClassName('card');
 
-	var el = document.getElementById('card1').textContent;
-	el.addEventListerner('click', myFlip);
+	//creates an event listerner for all cards
+	for (var i = 0; i < className.length; i++) {
+    className[i].addEventListener('click', clickHandlers, false);
+	}
+
 	
 	
 });
