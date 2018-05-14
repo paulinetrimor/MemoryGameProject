@@ -25,16 +25,19 @@ $(document).ready(function(){
 
 	function assign(){ //assigns new values of array into divs
 		for (i=0; i<cards.length; i++) {
-			$('#card'+(1+i)).text(cards[i]); 
-		};
+
+			$(".back"+(i+1)).append(cards[i]);
+
+		};	
 
 	}
+//*PROBLEM: All flips at first click!
 
 	function clickHandlers(a){ //determines if values in cards are equal
 		count++;
+		$('.card').toggleClass('flipped');
 		click=a.currentTarget.innerHTML;  //gets the value of the current element that was clicked
-		clicks =[];
-
+		
 		if (count%2 == 0){ //if count is even then compare
 			clicks[1] = click;
 
@@ -46,11 +49,11 @@ $(document).ready(function(){
 				//flip both cards face down
 				console.log('firstClick: '+ clicks[0]+ 'secondClick:' + clicks[1]+ ' does not match');
 			}
-
 		}
 
 		else{ //count is odd
-			clicks[0]=click; //this firstclick is not being stored in the array so I cannot access its value inside the other if else statement
+			clicks[0]=click; 
+		
 			console.log('firstClick: '+ clicks[0]);
 			//also keep div face up
 		} 
@@ -59,15 +62,13 @@ $(document).ready(function(){
 	init();
 	
 	var count=0;
-	var className = document.getElementsByClassName('card');
+	var clicks=[];
+	var className = document.getElementsByClassName('yo');
 
 	//creates an event listerner for all cards
 	for (var i = 0; i < className.length; i++) {
     className[i].addEventListener('click', clickHandlers, false);
 	}
-
-	
-	
 });
 
 
