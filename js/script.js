@@ -40,7 +40,7 @@ $(document).ready(function(){
 	function clickHandlers(a){ //determines if values in cards are equal
 		count++;
 		click=a.currentTarget.innerHTML;  //gets the value of the current element that was clicked
-		updateMoveCounter(); //update the moves
+		//updateMoveCounter(); //update the moves
 		
 		if (count%2 == 0){ //if count is even then compare
 			clicks[1] = click;
@@ -96,7 +96,7 @@ $(document).ready(function(){
   		timer.clearTime = setInterval(startTimer, 1000);
 	}
 
-	function showMode() {
+	/*function showMode() {
  		mode.css("display", "block");
 	}
 
@@ -122,7 +122,7 @@ $(document).ready(function(){
   		if (moveCounter === hard || moveCounter === medium) {
     	removeStar();
   		}
-	}//**************************************************************************************************
+	}**************************************************************************************************/
 
 
 	init();
