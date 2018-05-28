@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #ffffff url('http://hddesktopwallpapers.in/wp-content/uploads/2015/09/night-sky-wallpaper-hd.jpg'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('http://hddesktopwallpapers.in/wp-content/uploads/2015/09/night-sky-wallpaper-hd.jpg');
     font-family: 'Coda', cursive;
 }
 
@@ -26,6 +26,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
 
 h1 {
@@ -66,14 +67,11 @@ h3{
     height: 125px;
     width: 125px;
     background: #2e3d49;
-    font-size: 50px;
-    color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
-    justify-content: center;
-    align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    margin: 0 auto;
 }
 
 
@@ -104,4 +102,16 @@ h3{
     color: white;
 }
 
+.cardimg{
+	content: url(http://moziru.com/images/alien-clipart-3.png);
 
+}
+
+.card {
+    background: #2184cd;
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+}
